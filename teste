@@ -1,13 +1,1 @@
-teste = int(input(""))
-
-codigo=[]
-for i in range (teste):
-    enigma = input("")
-    enigma = enigma.split()
-    for j in range (len(enigma)):
-        palavra=(list(enigma[j]))
-        codigo.append(palavra[0])
-    codigo=''.join(codigo)
-    print(codigo)
-    codigo=[]
 
