@@ -1,25 +1,49 @@
 import os
 os.system("cls")
 
+
+# C - CREATE     | Criado e funcionando
+# U - UPDATE     | Criado e funcionando
+# R - READ       |
+# D - DELETE     | Criado e funcionando
+
+# def read(): #Atualmente sem ideia de como executar
+
 # livros = { 'Nome_do_Livro': ['Categoria', 'Autor', Preço]}
 
 #Dicionatio biblioteca - Atualmente vazio - Usuario insere as informações
-biblioteca = {'Herding Cats':['Quadrinhos', 'Sarah Andersen', 30.00]}
+#Informações para teste
+biblioteca = {'Herding Cats':['Quadrinhos', 'Sarah Andersen', 30.00]} 
 
+#==================================
 
-#Função menu ainda não funciona corretamente (while true infinito)
+#Função menu agindo corretamente
 def menu():
     
     while True:
         print("Digite qual operação deseja fazer: ")
-        print("1 - Cadastrar Novo Livro \n2 - Ler a biblioteca \n3 - Atualizar informações \n4 - Apagar um livro\n 0 - Sair do programa")
-        i = input("")
+        print("\n1 - Cadastrar Novo Livro \n2 - Ler a biblioteca \n3 - Atualizar informações \n4 - Apagar um livro \n0 - Sair do programa")
+        i = int(input(""))
+        print("-----------")
 
         if i == 0:
             break
         elif i == 1:
-            return cadastro()
+            cadastro()
+        
+        elif i == 2:
+            print("Função Não encontrada, tente novamente")
+        
+        elif i == 3:
+            atualizar()
 
+        elif i == 4:
+            remover()
+        
+        else:
+            print("Função não encontrada por favor tente novamente")
+
+#==================================
 
 #Função de Create/Cadastro de Livros
 def cadastro():
@@ -30,11 +54,10 @@ def cadastro():
     valor = float(input("Valor gasto no livro: "))
     biblioteca[nome] = [categoria, autor, valor]
 
-# def read(): #Atualmente sem ideia de como executar
-
+#==================================
 
 #Função Update/Atualizar informações de livros
-def update():
+def atualizar():
 
     print("Qual livro deseja alterar as informações: ")
     key = input("livro: ")
@@ -51,10 +74,25 @@ def update():
         if i+1 == seccao:
             biblioteca[key][i] = value
 
+#==================================
+
+#Função Delete/Remover livro do registro
+def remover():
+    print("Qual livro deseja retirar a biblioteca?: ")
+    key = input("livro: ")
+
+    del biblioteca[key]
+    # for i in biblioteca:
+
+        # if i == key:
+            # biblioteca[i]
+
 
 #--------------------------------------------------------
-cadastro()
+print("Seja bem vindo a sua biblioteca!")
+
 print(biblioteca)
 
-update()
+
+menu()
 print(biblioteca)
