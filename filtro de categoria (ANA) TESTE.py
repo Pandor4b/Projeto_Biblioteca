@@ -5,7 +5,7 @@ Livros = {"Harry Potter":["Fantasia"],
         "Senhor dos Anéis":["Fantasia"],
         "1984":["Distopia","Ficção Científica"], 
         "Maus":["Real", "HQ"], 
-        "20.000 Léguas Submarinas":["Ficção Científica"]}   #Lista genérica de teste. O usuário irá colocar os livros
+        "20.000 Léguas Submarinas":["Ficção Científica"]}   #Dicionário genérico de teste. O usuário irá colocar os livros
 
 Categoria = input("").title() #Input do usuário
 if Categoria == "Hq":
