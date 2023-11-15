@@ -71,7 +71,7 @@ def cadastro_livros():
     biblioteca[nome] = [categoria, autor, valor]
  
     # lista = list(biblioteca[nome])
-    file.write(f"{nome}, {categoria}, {autor}, {valor}\n")
+    file.write(f"{nome},{categoria},{autor},{valor}\n")
 
     # file.writelines(f"{biblioteca}")
 
@@ -109,8 +109,12 @@ def atualizar_livros():
             if i+1 == seccao:
                 biblioteca[key][i] = value
     
-    file = open('Testando arquivos/arquivo.txt', '+r', encoding='utf8')
+    file = open('Testando arquivos/arquivo.txt', 'w+', encoding='utf8')
 
+    for livros in biblioteca.keys():
+        
+        file.write(f'{livros},{biblioteca[livros][0]},{biblioteca[livros][1]},{biblioteca[livros][2]}\n')
+    
     file.close()
 
 #==================================
@@ -127,7 +131,7 @@ def remover_livros():
 
     for livros in biblioteca.keys():
         
-        file.write(f'{livros}, {biblioteca[livros][0]}, {biblioteca[livros][1]}, {biblioteca[livros][2]}\n')
+        file.write(f'{livros},{biblioteca[livros][0]},{biblioteca[livros][1]},{biblioteca[livros][2]}\n')
     
     file.close()
 
