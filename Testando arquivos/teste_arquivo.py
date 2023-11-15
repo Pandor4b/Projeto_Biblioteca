@@ -8,7 +8,7 @@ biblioteca = {}
 
 #==================================
 def iniico(): #Por os livros no arquivo na biblioteca
-    file = open('arquivo.txt', 'r')
+    file = open('Testando arquivos/arquivo.txt', 'r', encoding='utf8')
 
     lista = []
 
@@ -62,7 +62,7 @@ def menu():
 
 #Função de Create/Cadastro de Livros
 def cadastro_livros():
-    file = open('arquivo.txt', 'a')
+    file = open('Testando arquivos/arquivo.txt', 'a', encoding='utf8')
 
     nome = input("Nome do livro: ")
     categoria = input("Categoria do livro: ") #Atualmente só suportamos 1 categoria
@@ -109,7 +109,7 @@ def atualizar_livros():
             if i+1 == seccao:
                 biblioteca[key][i] = value
     
-    file = open('arquivo.txt', '+r')
+    file = open('Testando arquivos/arquivo.txt', '+r', encoding='utf8')
 
     file.close()
 
@@ -117,15 +117,17 @@ def atualizar_livros():
 
 #Função Delete/Remover livro do registro
 def remover_livros():
-    file = open('arquivo.txt', '+r')
     
     print("Qual livro deseja retirar a biblioteca?: ")
     key = input("livro: ")
-
     
     del biblioteca[key]
 
+    file = open('Testando arquivos/arquivo.txt', 'w+', encoding='utf8')
 
+    for livros in biblioteca.keys():
+        
+        file.write(f'{livros}, {biblioteca[livros][0]}, {biblioteca[livros][1]}, {biblioteca[livros][2]}\n')
     
     file.close()
 

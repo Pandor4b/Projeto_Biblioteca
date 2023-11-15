@@ -1,16 +1,6 @@
 import os
 os.system("cls")
 
-
-# C - CREATE     | Criado e funcionando
-# U - UPDATE     | Criado e funcionando
-# R - READ       |
-# D - DELETE     | Criado e funcionando
-
-# def read(): #Atualmente sem ideia de como executar
-
-# livros = { 'Nome_do_Livro': ['Categoria', 'Autor', Preço]}
-
 #Dicionatio biblioteca - Atualmente vazio - Usuario insere as informações
 #Informações para teste
 biblioteca = {'Herding Cats':['Quadrinhos', 'Sarah Andersen', 30.00]} 
@@ -89,10 +79,7 @@ def remover():
 
 
 #--------------------------------------------------------
+
 print("Seja bem vindo a sua biblioteca!")
 
-print(biblioteca)
 
-
-menu()
-print(biblioteca)
