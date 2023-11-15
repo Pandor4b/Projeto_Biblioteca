@@ -15,7 +15,9 @@ while True:
 #Se não, pergunte ao usuário as categorias do livro
 #Depois adicione o livro com as suas categorias ao dicionário e volte para o começo
 
-Categoria = input("\n\nGostaria de procurar por livros em que categoria?\n\n") #Input do usuário
+Categoria = input("\n\nGostaria de procurar por livros em que categoria?\n\n").title() #Input do usuário
+if Categoria == "Hq":
+    Categoria = Categoria.upper() #Pra que funcione com esse gênero porque ele apresenta duas letras maiúsculas
 
 for livro, categorias in Livros.items(): 
     #.items() Transforma o dicionário em várias tuplazinhas de fácil compreensão pro código, permitindo a comparação.

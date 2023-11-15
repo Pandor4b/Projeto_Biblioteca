@@ -7,7 +7,9 @@ Livros = {"Harry Potter":["Fantasia"],
         "Maus":["Real", "HQ"], 
         "20.000 Léguas Submarinas":["Ficção Científica"]}   #Lista genérica de teste. O usuário irá colocar os livros
 
-Categoria = input("") #Input do usuário
+Categoria = input("").title() #Input do usuário
+if Categoria == "Hq":
+    Categoria = Categoria.upper() #Pra que funcione com esse gênero porque ele apresenta duas letras maiúsculas
 
 for livro, categorias in Livros.items(): 
     #.items() Transforma o dicionário em várias tuplazinhas de fácil compreensão pro código, permitindo a comparação.
