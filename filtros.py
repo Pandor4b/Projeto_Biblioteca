@@ -136,8 +136,8 @@ def FiltroPorPreco():
         input_max = input("\nPor favor coloque o preço máximo desejado\n\n").replace(",",".")
         os.system ("cls")
 
-        input_min = input_min.translate({ord(i): None for i in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%¨&*()-_=+|\/}{~``[]:;?"<>ç'})
-        input_max = input_max.translate({ord(i): None for i in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%¨&*()-_=+|\/}{~``[]:;?"<>ç'})
+        input_min = input_min.translate({ord(i): None for i in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%¨°&*()-_=+|\/}{~``[]:;?"<>ç'})
+        input_max = input_max.translate({ord(i): None for i in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%¨°&*()-_=+|\/}{~``[]:;?"<>ç'})
         #Se o usuário digitar letras com números, isso tira as letras + qualquer coisa que não for número ou ponto
 
         if (len(input_min) == 0) or (len(input_max) == 0): #Garante que o string vai ter alguma coisa nele
