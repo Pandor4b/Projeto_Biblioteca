@@ -3,7 +3,8 @@ from pickle import TRUE
 os.system('cls')
 
 recomendacoes= {}
-biblioteca = {'Herding Cats':['Quadrinhos', 'Sarah Andersen', 30.00]} 
+biblioteca = {} 
+lista_de_Recomendacoes = []
 def recomendations():
     file = open('recomend.txt', 'r', encoding='utf8')
 
@@ -12,7 +13,7 @@ def recomendations():
     for i in file.readlines(): #Colocando as lines em uma lista1
 
         lista1.append(i)
-
+    file.close()
 
 #Manipulação da lista1 para por na biblioteca
     for j in range(len(lista1)):
@@ -21,45 +22,33 @@ def recomendations():
         lista1[j] = lista1[j].split(',')
 
         recomendacoes[lista1[j][0]] = [lista1[j][1:]]
-    while TRUE:
-        gender = input("Digite o genero que deseja recomendações: ").capitalize()
+    while TRUE: #
+        gender = input("Digite o genero que deseja recomendações: ").capitalize() #escolhendo o genero para achar recomendações
+        
         if gender in recomendacoes:
 
-            tamanho = 0
-            for K in range (len(lista1)):
-                tamanho = (len(lista1[K]))
-            morte = (str(next(iter(biblioteca))))
+            print(f"Recomendações do genero {gender}: \n")
 
-            if tamanho != 0:
-                print(f"Recomendações do genero {gender}: \n")
-                for i in range (tamanho): 
+            num=0
+            for item in recomendacoes.get(gender)[0]: #printando as recomendações
+                num+=1
+                print(f"{num}. {item}")
 
-                    if i > 0:
-                        if str(lista1[j][i]) != morte:
-                            print(f"{i}. ",lista1[j][i])
-
-                continuar = input("Deseja continuar procurando recomendações? [S/N] ").upper()
-                if continuar == "N":
-                    break
-                elif continuar == "S":
-                    os.system('cls')
-                    continue
-        else:
-            os.system('cls')
-            print("Genero não encontrado")
-            continuar = input("Deseja continuar procurando recomendações? [S/N] ").upper()
+            continuar = input("Deseja continuar procurando recomendações? [S/N] ").upper() #perguntando se a função será reiniciada
             if continuar == "N":
                 break
             elif continuar == "S":
                 os.system('cls')
                 continue
-            
-                        
-                    
-        
-        
-
-    file.close()
+        else:
+            os.system('cls')
+            print("Genero não encontrado")
+            continuar = input("Deseja continuar procurando recomendações? [S/N] ").upper() #perguntando se a função será reiniciada
+            if continuar == "N":
+                break
+            elif continuar == "S":
+                os.system('cls')
+                continue
 
 
 recomendations()
