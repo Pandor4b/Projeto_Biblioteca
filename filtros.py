@@ -132,119 +132,83 @@ def FiltroPorPreco():
         os.system ("cls")
 
         print('Você está na sessão de filtro por preço!')
-        input_min = input("Por favor coloque o preço mínimo desejado\n\n").replace(",",".") #A vírgula das casa decimais é trocada por um ponto para garantir que será convertido num float
-        input_max = input("\nPor favor coloque o preço máximo desejado\n\n").replace(",",".")
-        os.system ("cls")
-
-        input_min = input_min.translate({ord(i): None for i in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%¨°&*()-_=+|\/}{~``[]:;?"<>ç'})
-        input_max = input_max.translate({ord(i): None for i in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%¨°&*()-_=+|\/}{~``[]:;?"<>ç'})
-        #Se o usuário digitar letras com números, isso tira as letras + qualquer coisa que não for número ou ponto
-
-        if (len(input_min) == 0) or (len(input_max) == 0): #Garante que o string vai ter alguma coisa nele
-            while True:
-                #Se o usuário digita o comando certo, ele é mandado pra onde quer ir
-                #Se o usuário digita o comadno errado, ele volta pro começo com uma mensagem de erro
-                if comando_invalido == False:
-                    os.system ("cls")
-                    print("ERRO: Valores inválidos!")
-
-                    retorno = input('\nR = Retornar ao menu de filtros\nM = Retornar ao menu pincipal \nP = Filtrar por um preço diferente\n\n')
-                    if retorno.upper() == "R": 
-                        MenuDeFiltros()
-                        break
-                    elif retorno.upper() == "P":
-                        FiltroPorPreco()
-                        continue
-                    else:
-                        comando_invalido = True
-                        continue
-
-                elif comando_invalido == True:
-                    os.system ("cls")
-                    print("ERRO: Comando inválido! Por favor digite R, M ou P")
-
-                    retorno = input('\nR = Retornar ao menu de filtros\nM = Retornar ao menu pincipal \nP = Filtrar por um preço diferente\n\n')
-                    if retorno.upper() == "R": 
-                        MenuDeFiltros()
-                        break
-                    elif retorno.upper() == "M": 
-                        break
-                    elif retorno.upper() == "P":
-                        FiltroPorPreco()
-                        break
-                    else:
-                        continue #já está True então não precisa afirmar
-
-
-        precos_filtrados.clear() #Mesmo conceito da lista filtrada de livros de antes
-
-        if(len(input_min) != 0) and (len(input_max) != 0):
-            preco_min = float(input_min)
-            preco_max = float(input_max)
-            if preco_max < preco_min: #Não existe preço negativo
-                while True:
-                    if comando_invalido == False:
-                        os.system ("cls")
-                        print("ERRO: Valores inválidos!")
-
-                        retorno = input('\nR = Retornar ao menu de filtros\nM = Retornar ao menu pincipal \nP = Filtrar por um preço diferente\n\n')
-                        if retorno.upper() == "R": 
-                            MenuDeFiltros()
-                            break
-                        elif retorno.upper() == "P":
-                            FiltroPorPreco()
-                            continue
-                        else:
-                            comando_invalido = True
-                            continue
-
-                    elif comando_invalido == True:
-                        os.system ("cls")
-                        print("ERRO: Comando inválido! Por favor digite R, M ou P")
-
-                        retorno = input('\nR = Retornar ao menu de filtros\nM = Retornar ao menu pincipal \nP = Filtrar por um preço diferente\n\n')
-                        if retorno.upper() == "R": 
-                            MenuDeFiltros()
-                            break
-                        elif retorno.upper() == "M": 
-                            break
-                        elif retorno.upper() == "P":
-                            FiltroPorPreco()
-                            break
-                        else:
-                            continue #já está True então não precisa afirmar
-
-            elif preco_max > preco_min: #O correto
-                faixa_do_preco = preco_max - preco_min
-                for livro, valores in biblioteca.items(): 
-                    preco = valores[2] #A terceira key da biblioteca é o preço
-                    if ((preco_max - preco) <= faixa_do_preco) and ((preco - preco_min) <= faixa_do_preco): #Pra que o preço fique dentro da faixa de preço
-                        precos_filtrados[livro] = preco #O livro e o preço são armazenados
-            
-                if not precos_filtrados:
-                    print("Nenhum livro com essa faixa de preço encontrado")
-                else:
-                    for livro, preco in precos_filtrados.items():
-                        print(f"{livro} --- {preco}") #Imprime o livro e o seu preço
+        while True:
+            try:
+                preco_min = float(input("Por favor coloque o preço mínimo desejado\n\n"))
+                preco_max = float(input("\nPor favor coloque o preço máximo desejado\n\n")) #Tente converter os inputs do usuario em float
+                os.system("cls")
+            except:
+                os.system("cls")
+                print("ERRO: Digite um número válido! Se precisar usar casas decimais, use ponto em vez de vírgula!\n")
+            else:
 
                 while True:
-                    if comando_invalido == True:
-                        os.system ("cls")
-                        print("ERRO: Comando inválido! Por favor digite R, M ou P")
-                        comando_invalido = False
+                    precos_filtrados.clear() #Mesmo conceito da lista filtrada de livros de antes
 
-                    retorno = input('\nR = Retornar ao menu de filtros\nM = Retornar ao menu pincipal \nP = Filtrar por um preço diferente\n\n')
-                    if retorno.upper() == "R": 
-                        MenuDeFiltros()
-                        break
-                    elif retorno.upper() == "M": 
-                        break
-                    elif retorno.upper() == "P":
-                        FiltroPorPreco()
-                        break
-                    else:
-                        comando_invalido = True
-                        continue
+                    if preco_max < preco_min: #Não existe preço negativo
+                        while True:
+                            if comando_invalido == False:
+                                os.system ("cls")
+                                print("ERRO: Valores inválidos!")
+
+                                retorno = input('\nR = Retornar ao menu de filtros\nM = Retornar ao menu pincipal \nP = Filtrar por um preço diferente\n\n')
+                                if retorno.upper() == "R": 
+                                    MenuDeFiltros()
+                                    break
+                                elif retorno.upper() == "P":
+                                    FiltroPorPreco()
+                                    continue
+                                else:
+                                    comando_invalido = True
+                                    continue
+
+                            elif comando_invalido == True:
+                                os.system ("cls")
+                                print("ERRO: Comando inválido! Por favor digite R, M ou P")
+
+                                retorno = input('\nR = Retornar ao menu de filtros\nM = Retornar ao menu pincipal \nP = Filtrar por um preço diferente\n\n')
+                                if retorno.upper() == "R": 
+                                    MenuDeFiltros()
+                                    break
+                                elif retorno.upper() == "M": 
+                                    break
+                                elif retorno.upper() == "P":
+                                    FiltroPorPreco()
+                                    break
+                                else:
+                                    continue #já está True então não precisa afirmar
+
+                    elif preco_max > preco_min: #O correto
+                        faixa_do_preco = preco_max - preco_min
+                        for livro, valores in biblioteca.items(): 
+                            preco = valores[2] #A terceira key da biblioteca é o preço
+                            if ((preco_max - preco) <= faixa_do_preco) and ((preco - preco_min) <= faixa_do_preco): #Pra que o preço fique dentro da faixa de preço
+                                precos_filtrados[livro] = preco #O livro e o preço são armazenados
+                    
+                        if not precos_filtrados:
+                            print("Nenhum livro com essa faixa de preço encontrado")
+                        else:
+                            for livro, preco in precos_filtrados.items():
+                                print(f"{livro} --- R${preco}") #Imprime o livro e o seu preço
+
+                        while True:
+                            if comando_invalido == True:
+                                os.system ("cls")
+                                print("ERRO: Comando inválido! Por favor digite R, M ou P")
+                                comando_invalido = False
+
+                            retorno = input('\nR = Retornar ao menu de filtros\nM = Retornar ao menu pincipal \nP = Filtrar por um preço diferente\n\n')
+                            if retorno.upper() == "R": 
+                                MenuDeFiltros()
+                                break
+                            elif retorno.upper() == "M": 
+                                break
+                            elif retorno.upper() == "P":
+                                FiltroPorPreco()
+                                break
+                            else:
+                                comando_invalido = True
+                                continue
 
 
 MenuDeFiltros() #Início do código 💀
