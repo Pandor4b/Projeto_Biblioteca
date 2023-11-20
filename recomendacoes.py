@@ -6,7 +6,7 @@ recomendacoes= {}
 biblioteca = {} 
 lista_de_Recomendacoes = []
 def recomendations():
-    file = open('recomend.txt', 'r', encoding='utf8')
+    file = open('recomend.txt', 'r', encoding='utf-8')
 
     lista1 = []
 
@@ -42,7 +42,7 @@ def recomendations():
                 continue
         else:
             os.system('cls')
-            print("Genero não encontrado")
+            print("Gênero não encontrado / ou não existem recomendações para este gênero")
             continuar = input("Deseja continuar procurando recomendações? [S/N] ").upper() #perguntando se a função será reiniciada
             if continuar == "N":
                 break
