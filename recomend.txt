@@ -1,0 +1,10 @@
+Ação,O despertar dos dragões,O império dos mortos,até o ultimo homem,Duna,Jogos Vorazes
+Romance,A cinco passos de você,Dash & Lily,A culpa é das estrelas,Como eu era antes de você,Hearthstopper
+Manga,Chainsaw Man,Naruto,Dragon Ball Z,Jujutsu Kaisen,Your name
+Terror,IT - A coisa,O homem de Giz,Oque aconteceu com Annie,O cemiterio Maldito, O iluminado
+Crimes,Ted Bundy,De frente com o serial killer,O perfume,Mind Hunter: O primeiro caçador de serial killers americano,A sangue frio
+Aventura,As cronias de Narnia,Senhor dos anéis,Os portões do inferno
+Ficção,The Witcher,Trono de Vidro,Harry Potter: e a pedra filosofal,Corte de espinhos e Rosas,O pricipe cruel
+Infantil,Ursinho Pooh Constrói uma Casa,Winnie-The-Pooh,Menina Bonita do laço de Fita,Muito cansado e bem acordado,O pequeno Principe
+Drama,Hamlet,O caçador de pipas,É assim que acaba,Para sempre Alice,Antes que as luzes se apaguem
+Comedia,Auto da Compadecida,As aventuras de Tom Sawyer,O guia do mochileiro das galaxias,Epaminondas o gato explicador,O sonho de uma noite de verão.
