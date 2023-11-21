@@ -29,7 +29,7 @@ def logout():
         elif saida =='N':
             break
         elif saida != "S" and saida != "N":
-            print("Comando inválido, digite S ou N")
+            print("Comando inválido, digite [S] ou [N]")
             continue
     
 #==================================
@@ -63,7 +63,7 @@ def menu():
     
     while True:
         print("Digite qual operação deseja fazer: ")
-        print("\n1 - Cadastrar Novo Livro \n2 - Ler a biblioteca \n3 - Atualizar informações \n4 - Apagar um livro \n5 - Menu de Filtros \n6 - Ver Recomendações \n0 - Sair do programa")
+        print("\n[1] - Cadastrar Novo Livro \n[2] - Ler a biblioteca \n[3] - Atualizar informações \n[4] - Apagar um livro \n[5] - Menu de Filtros \n[6] - Ver Recomendações \n[0] - Sair do programa")
         i = (input(""))
         print("-----------")
 
@@ -100,7 +100,7 @@ def cadastro_livros():
 
     
     while True:
-        nome = input("Nome do livro (digite 0 para voltar): ").title()
+        nome = input("Nome do livro (digite [0] para voltar): ").title()
         if nome == "0":
             os.system("cls")
             break
@@ -151,7 +151,7 @@ def ler_livros():
         lista_de_leitura.append(livros)
 
 
-    ação = int(input("\n\npara ver as informações de um livro digite o seu numero correspondente \n (digite 0 para voltar) \n\n"))
+    ação = int(input("\n\npara ver as informações de um livro digite o seu numero correspondente \n (digite [0] para voltar) \n\n"))
     if ação == 0:
         return()
     else:
@@ -159,13 +159,13 @@ def ler_livros():
         print(f" nome: {lista_de_leitura[ação]}\n genero: {biblioteca[lista_de_leitura[ação]][0]} \n autor: {biblioteca[lista_de_leitura[ação]][1]} \n preço: {biblioteca[lista_de_leitura[ação]][2]} \n")
 #printa o livro e suas informações (tem que se referir assim mesmo, porque a forma de importar o arquivo deixa ele assim)
     while True:
-        retorno = (input("\n\ndigite R para voltar ao menu \n\n")).upper()
+        retorno = (input("\n\nDigite [R] para voltar ao menu \n\n")).upper()
         if retorno == "R":
             os.system("cls")
             return()
         else:
             os.system("cls")
-            print("comando invalido")
+            print("Comando invalido")
             continue
             
         
@@ -177,7 +177,7 @@ def ler_livros():
 #Função Update/Atualizar informações de livros
 def atualizar_livros():
     
-    print("Qual livro deseja alterar as informações (digite 0 para sair):")
+    print("Qual livro deseja alterar as informações (digite [0] para sair):")
     while True:
         try:
             key = input("livro: ").title()
@@ -193,7 +193,7 @@ def atualizar_livros():
             print("Valor inválido, digite um valor válido")
             continue
 
-    print("Secção de alterar informações, qual informação deseja alterar? (digite os numeros) \n0- Alterar Nome \n1- Alterar Categoria \n2- Alterar Autor \n3- Alterar valor")
+    print("Secção de alterar informações, qual informação deseja alterar? (digite os numeros) \n[0]- Alterar Nome \n[1]- Alterar Categoria \n[2]- Alterar Autor \n[3]- Alterar valor")
     while True:
         try:
             seccao = int(input())
@@ -217,7 +217,7 @@ def atualizar_livros():
                 break
             except ValueError:
                 os.system("cls")
-                print("insira um valor valido!")
+                print("Insira um valor valido!")
                 continue
 
     if seccao == 0:
@@ -244,10 +244,10 @@ def atualizar_livros():
 #Função Delete/Remover livro do registro
 def remover_livros():
     
-    print("Qual livro deseja retirar da biblioteca? (digite 0 para sair) ")
+    print("Qual livro deseja retirar da biblioteca? (digite [0] para sair) ")
     while True:
         try:
-            key = input("livro: ").title()
+            key = input("Livro: ").title()
             if key == "0":
                 return()
             elif key in biblioteca.keys():
@@ -305,6 +305,10 @@ def recomendations():
             elif continuar == "S":
                 os.system('cls')
                 continue
+            else:
+                os.system("cls")
+                print("Comando invalido, digite S ou N")
+                continue
         else:
             os.system('cls')
             print("Genero não encontrado")
@@ -318,7 +322,7 @@ def recomendations():
                     break
                 else:
                     os.system("cls")
-                    print("comando invalido, digite S ou N")
+                    print("Comando invalido, digite S ou N")
 
 #=================
 def MenuDeFiltros():
@@ -329,7 +333,7 @@ def MenuDeFiltros():
         print("Você está no menu de filtros da sua biblioteca particular!")
         if comando_invalido == True:
             os.system ("cls")
-            print("ERRO: Comando inválido! Por favor coloque um número de 0 a 3")
+            print("ERRO: Comando inválido! Por favor coloque um número de [0 a 3]")
             comando_invalido = False #Isso garante que o código não vai loopar infinitamente
 
         print ("Qual filtro gostaria de usar na sua pesquisa?\n")
@@ -377,16 +381,16 @@ def FiltroPorGenero():
         while True:
             if comando_invalido == True:
                 os.system ("cls")
-                print("ERRO: Comando inválido! Por favor digite R ou G")
+                print("ERRO: Comando inválido! Por favor digite [R] ou [G]")
                 comando_invalido = False
-            retorno = input('\nR = Retornar ao menu de filtros \nG = Filtrar por um gênero diferente\n\n').upper()
+            retorno = input('\n[R] = Retornar ao menu de filtros \n[G] = Filtrar por um gênero diferente\n\n').upper()
             if retorno == "R": 
                 return()
             elif retorno == "G":
                 break
             else:
                 comando_invalido = True
-                print("comando invalido")
+                print("Comando invalido")
                 continue
 
 
@@ -414,9 +418,9 @@ def FiltroPorAutor(): #Esse é quase idêntico ao anterior
         while True:
             if comando_invalido == True:
                 os.system ("cls")
-                print("ERRO: Comando inválido! Por favor digite R ou G")
+                print("ERRO: Comando inválido! Por favor digite [R] ou [G]")
                 comando_invalido = False
-            retorno = input('\nR = Retornar ao menu de filtros \nG = Filtrar por um autor diferente\n\n').upper()
+            retorno = input('\n[R] = Retornar ao menu de filtros \n[G] = Filtrar por um autor diferente\n\n').upper()
             if retorno == "R": 
                 return()
             elif retorno == "G":
@@ -450,8 +454,8 @@ def FiltroPorPreco():
                         while True:
                             
                             os.system ("cls")
-                            print("ERRO: Comando inválido! Por favor digite R ou G")
-                            retorno = input('\nR = Retornar ao menu de filtros \nG = Filtrar por uma faixa de preço diferente\n\n').upper()
+                            print("ERRO: Comando inválido! Por favor digite [R] ou [G]")
+                            retorno = input('\n[R] = Retornar ao menu de filtros \n[G] = Filtrar por uma faixa de preço diferente\n\n').upper()
                             if retorno == "R": 
                                 return()
                             elif retorno == "G":
@@ -459,13 +463,12 @@ def FiltroPorPreco():
                                 break
                             else:
                                 comando_invalido = True
-                                print("comando invalido")
+                                print("Comando invalido")
                                 continue
                         break
                         
 
                         
-
                     elif preco_max > preco_min: #O correto
                         faixa_do_preco = preco_max - preco_min
                         for livro, valores in biblioteca.items(): 
@@ -483,16 +486,16 @@ def FiltroPorPreco():
                         while True:
                             if comando_invalido == True:
                                 os.system ("cls")
-                                print("ERRO: Comando inválido! Por favor digite R ou G")
+                                print("ERRO: Comando inválido! Por favor digite [R] ou [G]")
                                 comando_invalido = False
-                            retorno = input('\nR = Retornar ao menu de filtros \nG = Filtrar por uma faixa de preço diferente\n\n').upper()
+                            retorno = input('\n[R] = Retornar ao menu de filtros \n[G] = Filtrar por uma faixa de preço diferente\n\n').upper()
                             if retorno == "R": 
                                 return()
                             elif retorno == "G":
                                 break
                             else:
                                 comando_invalido = True
-                                print("comando invalido")
+                                print("Comando invalido")
                                 continue
                         break
 
