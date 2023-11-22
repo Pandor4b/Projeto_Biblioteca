@@ -1,8 +1,11 @@
 import os
 os.system("cls")
 
+# (template bonitinho)
+#print("\n="*9) 
 
-biblioteca = {}
+
+biblioteca = {} #Dict principal
 recomendacoes= {}
 lista_de_Recomendacoes = []
 livros_filtrados = [] #Lista onde os livros dentro do filtro são colocados
@@ -12,8 +15,6 @@ precos_filtrados = {} #Dicionário onde os livros e preços dentro da faixa mone
 #==================================
 #Função Login
 def login(usuario):
-
-
     usuario = open('dados_' + str(usuario) + '.txt', 'a', encoding='utf-8')
     usuario.close()
     return
@@ -22,6 +23,7 @@ def login(usuario):
 #Função Logout
 def logout():
     while True:
+        print("-----------------------------------------------------")
         saida = input("Deseja continuar na aplicação? \n[S] para Continuar\n[N] para Fechar\n").upper()
         os.system('cls')
         if saida == 'S':
@@ -30,42 +32,38 @@ def logout():
             break
         elif saida != "S" and saida != "N":
             print("Comando inválido, digite [S] ou [N]")
+            
             continue
     
 #==================================
-def inicio(): #Por os livros no arquivo na biblioteca
+#Função inical - insere os livros já existentes na dict da biblioteca 
+def inicio():
     file = open('dados_' + str(usuario) + '.txt', 'r', encoding='utf8')
 
     lista = []
 
     for i in file.readlines(): #Colocando as lines em uma lista
-
         lista.append(i)
     
-
 #Manipulação da lista para por na biblioteca
     for j in range(len(lista)):
         lista[j] = lista[j].replace("\n", '')
-
         lista[j] = lista[j].split('//')
  
-
         biblioteca[lista[j][0]] = [lista[j][1], lista[j][2], float(lista[j][3])]
         
-
     file.close()
 
-
 #==================================
-
 #Função menu agindo corretamente
 def menu():
     
     while True:
+        os.system('cls')
         print("Digite qual operação deseja fazer: ")
-        print("\n[1] - Cadastrar Novo Livro \n[2] - Ler a biblioteca \n[3] - Atualizar informações \n[4] - Apagar um livro \n[5] - Menu de Filtros \n[6] - Ver Recomendações \n[0] - Sair do programa")
-        i = (input(""))
-        print("-----------")
+        print("\n[1] - Cadastrar Novo Livro \n[2] - Ler a biblioteca \n[3] - Atualizar informações \n[4] - Apagar um livro \n[5] - Menu de Filtros \n[6] - Ver Recomendações \n[0] - Sair do programa\n")
+        i = (input("- "))
+        print("--------------------------------------------------------\n")
 
         if i == "0":
             os.system ("cls")
@@ -93,20 +91,24 @@ def menu():
             print("Função não encontrada por favor tente novamente")
 
 #==================================
-
 #Função de Create/Cadastro de Livros
 def cadastro_livros():
     file = open('dados_' + str(usuario) + '.txt', 'a', encoding='utf8')
 
     
     while True:
-        nome = input("Nome do livro (digite [0] para voltar): ").title()
+        # os.system("cls")
+
+        print("\tCadastro de Livros\n")
+        print("Para continuar digite o nome do livro \nPara voltar ao menu principal digite [0]\n")
+        nome = input("Nome do livro: ").title()
+
         if nome == "0":
             os.system("cls")
             break
+
         elif nome not in biblioteca:
             
-
             categoria = input("Categoria do livro: ").title() #Atualmente só suportamos 1 categoria
             autor = input("Autor do livro: ").title()
             while True:
@@ -120,8 +122,7 @@ def cadastro_livros():
                     continue
 
                 else:
-                    biblioteca[nome] = [categoria, autor, valor] #adiciona o livro a biblioteca
-                    
+                    biblioteca[nome] = [categoria, autor, valor] #adiciona o livro a biblioteca                    
                     file.write(f"{nome}//{categoria}//{autor}//{valor}\n") #adiciona o livro ao arquivo
                 
                     file.close() #fecha o arquivo
@@ -130,37 +131,35 @@ def cadastro_livros():
             break
         else:
             os.system("cls")
-            print(f"{nome} já se encontra na sua biblioteca\n")
+            print(f"O livro {nome} já se encontra na sua biblioteca\n")
 
             continue
                 
-    
-        
-    
-
 #==================================
-
+#Função Leitura da biblioteca
 def ler_livros():
-    os.system("cls")
-    print("livros Na sua Biblioteca\n")
+
+    print("\tlivros Na sua Biblioteca\n")
     Numero_de_livros = 0
     lista_de_leitura = [0]
+
     for livros in biblioteca:
-        Numero_de_livros+=1
+        Numero_de_livros += 1
         print(f"{Numero_de_livros}. {livros}")
         lista_de_leitura.append(livros)
 
-
-    ação = int(input("\n\npara ver as informações de um livro digite o seu numero correspondente \n (digite [0] para voltar) \n\n"))
+    print("\n\nDigite o numero correspondente para ver as informações de um livro. \nPara voltar ao menu principal digite [0]\n")
+    ação = int(input("- "))
     if ação == 0:
         return()
     else:
         os.system("cls")
-        print(f" nome: {lista_de_leitura[ação]}\n genero: {biblioteca[lista_de_leitura[ação]][0]} \n autor: {biblioteca[lista_de_leitura[ação]][1]} \n preço: {biblioteca[lista_de_leitura[ação]][2]} \n")
 #printa o livro e suas informações (tem que se referir assim mesmo, porque a forma de importar o arquivo deixa ele assim)
+        print(f" nome: {lista_de_leitura[ação]}\n genero: {biblioteca[lista_de_leitura[ação]][0]} \n autor: {biblioteca[lista_de_leitura[ação]][1]} \n preço: {biblioteca[lista_de_leitura[ação]][2]} \n")
+
     while True:
-        retorno = (input("\n\nDigite [R] para voltar ao menu \n\n")).upper()
-        if retorno == "R":
+        retorno = (input("\n\nDigite [0] para voltar ao menu \n\n")).upper()
+        if retorno == "0":
             os.system("cls")
             return()
         else:
@@ -168,19 +167,15 @@ def ler_livros():
             print("Comando invalido")
             continue
             
-        
-        
-
-    
 #==================================
-
 #Função Update/Atualizar informações de livros
 def atualizar_livros():
     
-    print("Qual livro deseja alterar as informações (digite [0] para sair):")
+    print("\tAtualização de livros\n")
+    print("Digite o nome do livro que deseja alterar as informações. \nPara voltar ao menu principal digite [0]\n")
     while True:
         try:
-            key = input("livro: ").title()
+            key = input("Livro: ").title()
             if key == "0":
                 os.system("cls")
                 return()
@@ -192,8 +187,11 @@ def atualizar_livros():
         except ValueError:
             print("Valor inválido, digite um valor válido")
             continue
-
-    print("Secção de alterar informações, qual informação deseja alterar? (digite os numeros) \n[0]- Alterar Nome \n[1]- Alterar Categoria \n[2]- Alterar Autor \n[3]- Alterar valor")
+    
+    print("\n="*9)
+    print("\tSecção de alterar informações \nQual informação deseja alterar? (digite apenas numeros numeros)")
+    print("\n[0]- Alterar Nome \n[1]- Alterar Categoria \n[2]- Alterar Autor \n[3]- Alterar valor")
+    #UnboundLocalError
     while True:
         try:
             seccao = int(input())
@@ -209,9 +207,37 @@ def atualizar_livros():
         else:
             break
     
-    if seccao == 3:
+    if seccao == 0: #Alterar Nome
+        print("\n="*9)
+        print(f"Escreva o novo nome do livro {key}: ")
+        value = input("- ").title()
+
+        biblioteca[value] = biblioteca[key]
+        del biblioteca[key]
+
+    elif seccao == 1: #Alterar Categoria
+        print("\n="*9)
+        print(f"Escreva a nova categoria do livro {key}: ")
+        value = input("- ").title()
+        for i in range(len(biblioteca[key])):
+            if i+1 == seccao:
+            
+                biblioteca[key][i] = value
+
+    elif seccao == 2: #Alterar Autor
+        print("\n="*9)
+        print(f"Escreva o novo autor do livro {key}: ")
+        value = input("- ").title()
+        for i in range(len(biblioteca[key])):
+            
+            if i+1 == seccao:
+                biblioteca[key][i] = value
+
+    elif seccao == 3: #Alterar Valor
+        print("\n="*9)
         while True:
-            value = input("Escreva a informação nova: ").title()
+            print(f"Escreva o valor novo do livro {key}")
+            value = input("- ").title()
             try:
                 value = float(value)
                 break
@@ -219,13 +245,7 @@ def atualizar_livros():
                 os.system("cls")
                 print("Insira um valor valido!")
                 continue
-
-    if seccao == 0:
         
-        biblioteca[value] = biblioteca[key]
-        del biblioteca[key]
-
-    else: 
         for i in range(len(biblioteca[key])):
             
             if i+1 == seccao:
@@ -240,7 +260,6 @@ def atualizar_livros():
     file.close()
 
 #==================================
-
 #Função Delete/Remover livro do registro
 def remover_livros():
     
