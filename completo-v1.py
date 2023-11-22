@@ -1,3 +1,4 @@
+from ast import Num
 import os
 os.system("cls")
 
@@ -138,26 +139,45 @@ def cadastro_livros():
 #==================================
 #Função Leitura da biblioteca
 def ler_livros():
-
+    os.system("cls")
     print("\tlivros Na sua Biblioteca\n")
     Numero_de_livros = 0
+    diminui = 0
     lista_de_leitura = [0]
-
-    for livros in biblioteca:
-        Numero_de_livros += 1
-        print(f"{Numero_de_livros}. {livros}")
-        lista_de_leitura.append(livros)
-
-    print("\n\nDigite o numero correspondente para ver as informações de um livro. \nPara voltar ao menu principal digite [0]\n")
-    ação = int(input("- "))
-    if ação == 0:
-        return()
-    else:
-        os.system("cls")
-        print("="*9)
-#printa o livro e suas informações (tem que se referir assim mesmo, porque a forma de importar o arquivo deixa ele assim)
-        print(f"Nome: {lista_de_leitura[ação]} \nGenero: {biblioteca[lista_de_leitura[ação]][0]} \nAutor: {biblioteca[lista_de_leitura[ação]][1]} \nValor: {biblioteca[lista_de_leitura[ação]][2]} \n")
-
+    while True:
+        try:
+            for livros in biblioteca:
+                Numero_de_livros += 1
+                
+                print(f"{Numero_de_livros}. {livros}")
+                lista_de_leitura.append(livros)
+                
+                if len(lista_de_leitura) > len(biblioteca)+1:
+                    lista_de_leitura.pop()
+                    
+                
+            Numero_de_livros = 0
+            
+            print("\n\nDigite o numero correspondente para ver as informações de um livro. \nPara voltar ao menu principal digite [0]\n")
+            ação = int(input("- "))
+            if ação == 0:
+                return()
+            else:
+                os.system("cls")
+                print("="*9)
+            #printa o livro e suas informações (tem que se referir assim mesmo, porque a forma de importar o arquivo deixa ele assim)
+                print(f"Nome: {lista_de_leitura[ação]} \nGenero: {biblioteca[lista_de_leitura[ação]][0]} \nAutor: {biblioteca[lista_de_leitura[ação]][1]} \nValor: {biblioteca[lista_de_leitura[ação]][2]} \n")
+                break
+        except ValueError:
+            os.system("cls")
+            print("="*9)
+            print("ERRO: O indice inserido não coresponde a nenhum livro.\n\n")
+            continue
+        except IndexError:
+            os.system("cls")
+            print("="*9)
+            print("ERRO: O indice inserido não coresponde a nenhum livro. \n\n")
+            continue
     while True:
         retorno = (input("\n\nDigite [0] para voltar ao menu \n\n")).upper()
         if retorno == "0":
@@ -511,7 +531,7 @@ def FiltroPorPreco():
                         
 
                         
-                    elif preco_max > preco_min: #O correto
+                    elif preco_max >= preco_min: #O correto
                         faixa_do_preco = preco_max - preco_min
                         for livro, valores in biblioteca.items(): 
                             preco = valores[2] #A terceira key da biblioteca é o preço
