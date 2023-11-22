@@ -9,4 +9,4 @@ Infantil,Ursinho Pooh Constrói uma Casa,Winnie-The-Pooh,Menina Bonita do laço 
 Drama,Hamlet,O caçador de pipas,É assim que acaba,Para sempre Alice,Antes que as luzes se apaguem,Um lugar bem longe daqui,Todas as suas perfeições,O Sol é para todos,O caçador de Pipas,
 Comedia,Auto da Compadecida,As aventuras de Tom Sawyer,O guia do mochileiro das galaxias,Epaminondas o gato explicador,O sonho de uma noite de verão,O inspetor geral,A megera domada
 Fantasia,Percy Jackson o Ladrão de Raios,Eragon,Sombra e Ossos,O Senhor dos Anéis,A Guerra dos Tronos,O Feiticeiro de Terramar,O nome do Vento,Duna,O Aprendiz de Assassino
-HQ,Batman,Watchmen,Reino do Amanhã,Superman,Demolidor,Os Eternos,A Saga da Fênix Negra,Guerra Civil
+Hq,Batman,Watchmen,Reino do Amanhã,Superman,Demolidor,Os Eternos,A Saga da Fênix Negra,Guerra Civil
