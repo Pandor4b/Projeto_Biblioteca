@@ -191,7 +191,7 @@ def atualizar_livros():
     
     print()
     print("="*9)
-    print("\tSecção de alterar informações \nQual informação deseja alterar? (digite apenas numeros numeros)")
+    print("\tSecção de alterar informações \nQual informação deseja alterar? (digite apenas números)")
     print("\n[0]- Alterar Nome \n[1]- Alterar Gênero \n[2]- Alterar Autor \n[3]- Alterar valor")
 
     while True:
