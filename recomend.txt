@@ -1,12 +1,12 @@
-Ação,O despertar dos dragões,O império dos mortos,Até o ultimo homem,Duna,Jogos Vorazes`,Hamlet,A máquina do tempo,O Instituto,Segredo Mortal,The Stand
+Ação,O despertar dos dragões,O império dos mortos,Até o ultimo homem,Duna,Arte da Guerra,Hamlet,A máquina do tempo,O Instituto,Segredo Mortal,The Stand
 Romance,A cinco passos de você,Dash & Lily,A culpa é das estrelas,Como eu era antes de você,Hearthstopper,O amor nos tempos de cólera,Orgulho e Preconceito,Romeu e Julieta,Todas Vezes que te Vi Sorrir,Uma mentira Irresistível
 Manga,Chainsaw Man,Naruto,Dragon Ball Z,Jujutsu Kaisen,Your name,Your Lie in April, Berserker,Overlord,Fullmetal Alchemist,One Piece
-Terror,IT - A coisa,O homem de Giz,O que aconteceu com Annie,O cemiterio Maldito,O iluminado
-Crimes Verídicos,Ted Bundy,De frente com o serial killer,O perfume,Mind Hunter: O primeiro caçador de serial killers americano,A sangue frio
-Aventura,As cronias de Narnia,Senhor dos anéis,Os portões do inferno,As Crônicas de Nárnia,Sombra e Ossos,A Volta ao mundo em 80 dias,O Hobbit
-Ficção,The Witcher,Trono de Vidro,Harry Potter: e a pedra filosofal,Corte de espinhos e Rosas,O pricipe cruel
-Infantil,Ursinho Pooh Constrói uma Casa,Winnie-The-Pooh,Menina Bonita do laço de Fita,Muito cansado e bem acordado,O pequeno Principe
-Drama,Hamlet,O caçador de pipas,É assim que acaba,Para sempre Alice,Antes que as luzes se apaguem,Um lugar bem longe daqui,Todas as suas perfeições,O Sol é para todos,O caçador de Pipas,
-Comedia,Auto da Compadecida,As aventuras de Tom Sawyer,O guia do mochileiro das galaxias,Epaminondas o gato explicador,O sonho de uma noite de verão,O inspetor geral,A megera domada
-Fantasia,Percy Jackson o Ladrão de Raios,Eragon,Sombra e Ossos,O Senhor dos Anéis,A Guerra dos Tronos,O Feiticeiro de Terramar,O nome do Vento,Duna,O Aprendiz de Assassino
+Terror,IT - A coisa,O homem de Giz,O que aconteceu com Annie,O cemiterio Maldito,O iluminado,Assombração da Casa da Colina,Na Escuridão da Mente,Menina Má,Terra Amaldiçoada,O Silêncio dos Inocentes
+Crimes Verídicos,Ted Bundy,De frente com o serial killer,O perfume,Mind Hunter: O primeiro caçador de serial killers americano,A sangue frio,Os Cinco Sobreviventes,CSI: Investigação Criminal,Outsider,A mandíbula de Caim,Verity
+Aventura,Senhor dos anéis,Os portões do inferno,As Crônicas de Nárnia,Sombra e Ossos,A Volta ao mundo em 80 dias,O Hobbit,Sherlock Holmes,As extraordinárias viagens de Julio Verne,Alice no País das Maravilhas,Anne the Green Gables
+Ficção,The Witcher,Trono de Vidro,Harry Potter: e a pedra filosofal,Corte de espinhos e Rosas,O pricipe cruel,Jogos Vorazes,Stranger Things,Princesa das Cinzas,Interstellar,Star Trek
+Infantil,Ursinho Pooh Constrói uma Casa,Winnie-The-Pooh,Menina Bonita do laço de Fita,Muito cansado e bem acordado,O pequeno Principe,Emocionário,Amoras,O Lobo e as Ovelhas,Amor de Cabelo
+Drama,Hamlet,O caçador de pipas,É assim que acaba,Para sempre Alice,Antes que as luzes se apaguem,Um lugar bem longe daqui,Todas as suas perfeições,O Sol é para todos,O caçador de Pipas
+Comedia,Auto da Compadecida,As aventuras de Tom Sawyer,O guia do mochileiro das galaxias,Epaminondas o gato explicador,O sonho de uma noite de verão,O inspetor geral,A megera domada,A divina comédia,Porta dos Fundos,Cadê Você Bernadete?
+Fantasia,Percy Jackson o Ladrão de Raios,Eragon,O Senhor dos Anéis,A Guerra dos Tronos,O Feiticeiro de Terramar,O nome do Vento,Duna,O Aprendiz de Assassino
 Hq,Batman,Watchmen,Reino do Amanhã,Superman,Demolidor,Os Eternos,A Saga da Fênix Negra,Guerra Civil
