@@ -1,10 +1,6 @@
 import os
 os.system("cls")
 
-# (template bonitinho)
-#print("\n="*9) 
-
-
 biblioteca = {} #Dict principal
 recomendacoes= {}
 lista_de_Recomendacoes = []
