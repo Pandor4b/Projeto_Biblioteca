@@ -1,4 +1,3 @@
-from ast import Num
 import os
 os.system("cls")
 
